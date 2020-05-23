@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hello World | Hexo</title>
+  <title>网络编程基础二 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+  <meta name="description" content="java网络编程一书见解">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2018/06/03/hello-world/index.html">
+<meta property="og:title" content="网络编程基础二">
+<meta property="og:url" content="http://yoursite.com/2018/07/03/java网络编程一书见解/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta property="og:description" content="java网络编程一书见解">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-05-23T06:34:28.612Z">
+<meta property="og:updated_time" content="2020-05-23T06:58:39.840Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta name="twitter:title" content="网络编程基础二">
+<meta name="twitter:description" content="java网络编程一书见解">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,40 +150,90 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-java网络编程一书见解" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      网络编程基础二
     </h1>
   
 
         
-        <a href="/2018/06/03/hello-world/" class="archive-article-date">
-  	<time datetime="2018-06-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-03</time>
+        <a href="/2018/07/03/java网络编程一书见解/" class="archive-article-date">
+  	<time datetime="2018-07-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+        <p>java网络编程一书见解</p>
 <a id="more"></a>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h2 id="1-网络："><a href="#1-网络：" class="headerlink" title="1.网络："></a>1.网络：</h2><p>共享通用通信协议和通用通信媒体的设备的集合。</p>
+<h2 id="2-构成网络要素"><a href="#2-构成网络要素" class="headerlink" title="2.构成网络要素"></a>2.构成网络要素</h2><p>：网卡、路由器、集线器和网关。<br>  网卡：硬件设备（以太网卡）<br>  路由器：充当交换设备的机器。把数据包转到路由下的网络中<br>  集线器：提供允许多台机器访问同一个网络的连接   对应：（交换机）<br>  网关：把一个网络连接到另一个网络</p>
+<h2 id="3-使用包的数据传输"><a href="#3-使用包的数据传输" class="headerlink" title="3.使用包的数据传输"></a>3.使用包的数据传输</h2><p>  3-1.把数据分装成包（packet），由首部和数据段组成<br>  3-2.递交和定序</p>
+<h2 id="4-层间通信"><a href="#4-层间通信" class="headerlink" title="4.层间通信"></a>4.层间通信</h2><p>osi：开放系统互连参考模型（Open System Interconnect）</p>
+<p>应用层：各种应用程序协议：如http、ftp、pop3…</p>
+<p>表示层：负责数据表示和数据转换</p>
+<p>会话层：1.不同机器上的用户之间建立及管理会话。2.应用到应用间的数据交换以及通信会话的建立和终止。</p>
+<p>传输层：与控制数据的传输方式有关（自动差错检测盒纠错、流控制（限制发送的数据量以防止超载））</p>
+<p>网络层：处理数据包而不是帧，引入网络地址和路由。</p>
+<p>数据链路层：提供更可靠的数据传输，并负责把数据组合成帧（Frame）</p>
+<p>物理层：网卡和电缆，在两个节点间传送位序列。</p>
+<h2 id="5-Internet主要协议"><a href="#5-Internet主要协议" class="headerlink" title="5.Internet主要协议"></a>5.Internet主要协议</h2><p>TCP/IP</p>
+<p>IP协议：<br>网络层协议，用来在internet中传输数据包。包交换网络协议<br>    （1）IP数据报格式<br>    （2）IP地址：4字节（32位）<br>补：局域网上的主机和路由器可以使用地址解析协议（address resolution protocol）ARP<br>    （3）主机名称：域名代替IP地址<br>    （4）ICMP协议：网际控制报文协议，1.与IP联合使用，当数据递交发生差错是进行报告2.回显请求/回显应答3.地址掩码请求/地址掩码应答<br>    ICMP报文形式<br>        1）目的地不可达<br>        2）参数问题<br>        3)重定向<br>        4）源站一致<br>        5）超时<br>注：广为人知:PING网络应用程序，确定主机是否正在运行。CMD–ipconfig/all–ping xxx.xxx.xxx.xxx -t回车</p>
+<p>TCP协议：保证对字节的递交和排序（涉及通信端口：区分应用程序）<br>UDP协议：不保证包的递交、或者保证他们能够以正确的顺序到达</p>
+<h2 id="6-Internet应用协议："><a href="#6-Internet应用协议：" class="headerlink" title="6.Internet应用协议："></a>6.Internet应用协议：</h2><pre><code>1）Telnet                                                   TCP端口23
+2) FTP(文件传输协议)                         TCP端口21控制会话 端口20来传输文件内容
+3）POP3(访问E-mail)                           TCP端口110
+4）IMAP(消息访问协议，可以在邮件上创建目录、允许搜索邮件)   TCP端口143
+5）SMTP(简单邮件传输协议)                            TCP端口25
+6）HTTP（超文本传输协议）                                   TCP端口80
+7）Finger                            TCP端口79
+8）NNTP（网络新闻传输协议）                    TCP端口119
+9）WHOIS(寻找关于域名的信息)                      TCP端口43</code></pre><h2 id="7-防火墙与代理服务器"><a href="#7-防火墙与代理服务器" class="headerlink" title="7.防火墙与代理服务器"></a>7.防火墙与代理服务器</h2><h2 id="8-作为java程序员，仅需了解网络层、传输层、应用层"><a href="#8-作为java程序员，仅需了解网络层、传输层、应用层" class="headerlink" title="8.作为java程序员，仅需了解网络层、传输层、应用层"></a>8.作为java程序员，仅需了解网络层、传输层、应用层</h2><h1 id="套接字：socket"><a href="#套接字：socket" class="headerlink" title="套接字：socket"></a>套接字：socket</h1><h2 id="1、类"><a href="#1、类" class="headerlink" title="1、类"></a>1、类</h2><p>TCP:Socket、ServerSocket<br>UDP:DatagramSocket</p>
+<p>for example:</p>
+<p>服务端:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ServerSocket server = <span class="keyword">new</span> ServerSocket(<span class="number">8000</span>);<span class="comment">//监听端口8000</span></span><br><span class="line">Socket socket = server.accept();<span class="comment">//等待客户的连接请求</span></span><br><span class="line"></span><br><span class="line">OutputStream socketOut = socket.getOutputStream();</span><br><span class="line">PrintWriter pw = <span class="keyword">new</span> PrintWriter(socketOut,<span class="keyword">true</span>);</span><br><span class="line">InputStream socketIn = socket.getInputStream();</span><br><span class="line">BufferedReader br = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(socketIn));</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>客户端：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">String host = “localhost”;</span><br><span class="line">String port = <span class="number">8000</span>;</span><br><span class="line">Socket socket = <span class="keyword">new</span> Socket(host,port);</span><br><span class="line"></span><br><span class="line">OutputStream socketOut = socket.getOutputStream();</span><br><span class="line">PrintWriter pw = <span class="keyword">new</span> PrintWriter(socketOut,<span class="keyword">true</span>);</span><br><span class="line">InputStream socketIn = socket.getInputStream();</span><br><span class="line">BufferedReader br = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(socketIn));</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="2、方法"><a href="#2、方法" class="headerlink" title="2、方法"></a>2、方法</h2><p>socket.getOutputStream();<br>socket.getInputStream();<br>Socket中的gerInerAddress()和getPort()获取IP和端口<br>补：ip为客户的ip地址；端口有操作系统随机产生</p>
+<h2 id="3、Socket"><a href="#3、Socket" class="headerlink" title="3、Socket"></a>3、Socket</h2><p>3-1.构造方法<br>Socket()<br>Socket(address,port)//address:ip地址，InetAddress类<br>Socket(String host,int port)//主机名字</p>
+<p>Socket(String host,int port，InerAddress localAddr,int localPort)//后两个为客户端ip地址</p>
+<p>InetAddress类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">InetAddress addr1 = InetAddress.getLocalHost();<span class="comment">//返回ip</span></span><br><span class="line">InetAddress addr2 = InetAddress.getByName(<span class="string">"222.34.5.7"</span>);<span class="comment">//返回域名</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<p>InetAddress addr3 = InetAddress.getByName(“<a href="http://www.xxx.com&quot;);//返回域名的ip地址" target="_blank" rel="noopener">www.xxx.com&quot;);//返回域名的ip地址</a></p>
+<p>3-2.等待建立连接的超时时间</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Socket socket = <span class="keyword">new</span> Socket();</span><br><span class="line">SocketAddress remoteAdd = <span class="keyword">new</span>  InetSocketAddress(<span class="string">"localhost"</span>,<span class="number">8000</span>);</span><br><span class="line">socket.connect(remoteAddr,<span class="number">60000</span>);<span class="comment">//一分钟连接超时时间</span></span><br></pre></td></tr></table></figure>
+
+<p>3-3.连接异常</p>
+<p>3-4.获取Socket信息</p>
+<p>3-5.关闭Socket<br>isClosed()/isConnected()/isBound()</p>
+<p>3-6.半关闭Socket<br>shutdownInput()<br>shutdownOutput()</p>
+<p>3-7.Socket中的参数设置</p>
+<p>4.序列化与反序列化</p>
+<p>4-1.数据以二进制形式传输网络<br>4-2.<br>Serializable:<br>ObjectOutputStream代表对象输出流<br>    writeObject(obj)<br>    ObjectInputStream代表对象输入流<br>    readObject(obj)<br>Externalizable:<br>wtireExternal(ObjectOutput out)<br>readExternal(ObjectOutput in)</p>
+<p>4-3.必须实现接口Serializable/Externalizable才可序列化<br>4-4.反序列化，不会调用类的构造方法，而是直接根据序列化数据在内存中创建新的对象。<br>4-5.序列化，transient的变例变量、静态变量（扣掉静态块、静态常量）没有序列化。<br>4-6.transient可以用在银行账户的口令等，不让别人知道。<br>4-7.倘若序列化的对象中关联了其他对象（也实现了Serializable/Externalizable），该对象也会实例化<br>4-8.序列化的对象都有一个表示序列化版本表示符的静态常量</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">OutputStream out = socket.getOutputStream();</span><br><span class="line">ObjectOutputStream oss = <span class="keyword">new</span> ObjectOutputStream(out);</span><br><span class="line">oss.writeObject(object);</span><br><span class="line">oss.writeObject(object);</span><br><span class="line">oss.close;</span><br><span class="line">socket.close;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>javaBean<br>1.不带参数的public构造方法</p>
+<p>2.有getXxx()和setXxx()方法</p>
+<h2 id="5-反射（Reflection）机制"><a href="#5-反射（Reflection）机制" class="headerlink" title="5.反射（Reflection）机制"></a>5.反射（Reflection）机制</h2><pre><code>动态调用类的方法</code></pre><p>5-1.java.lang.reflect<br>5-2.<br>Class c = Class.forName();//加载并初始化命令行参数指定的类<br>c.getDeclaredMethods();//获取类的所有方法<br>5-3.Class类<br>  通过Object.getClass();获取<br>方法：getConstructor()/newInstance()</p>
+<hr>
+<h2 id="静态代理："><a href="#静态代理：" class="headerlink" title="静态代理："></a>静态代理：</h2><p>  一个代理类（辅助），一个委托类（目标），同时实现一个接口，然后通过代理类调用方法，方法里面调用委托类的方法。<br>  运用场合：</p>
+<h2 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理:"></a>动态代理:</h2><p>  无需程序员编辑源代码，运用反射机制动态生成。                    参考收藏网址！CSDN</p>
+<p>接口：Subject<br>委托类：RealSubject<br>反射处理类：实现InvocationHander，建立InvocationHander用来相应代理的任何调用，重写invoke方法method.invoke(proxied,args）<br>main：<br>RealSubject real = new RealSubject();<br>Subject a = (Subject)Proxy.newProxyInstance(Subject.class.getClassLoader(),new Class[]{Subject.class},new ProxyHandler(real));<br>a.SubjectShow();</p>
+<p>其中：Subject为接口，real为委托类实例对象，SubjectShow()为委托类的方法,ProxyHandler为建立InvocationHander用来相应代理的任何调用</p>
+<p>java.lang.reflect中的Proxy类和InvocationHandler接口</p>
 
       
 
@@ -268,7 +318,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/06/03/hello-world/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/03/java网络编程一书见解/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -282,15 +332,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/07/02/网络基础/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/07/JVM/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          网络编程基础一
+          This is JVM
         
       </div>
     </a>
   
+  
+    <a href="/2018/07/02/网络基础/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">网络编程基础一</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 

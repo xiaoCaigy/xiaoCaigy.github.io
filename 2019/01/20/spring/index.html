@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hello World | Hexo</title>
+  <title>Spring | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+  <meta name="description" content="轻量级、开源的、简化企业级应用开发的框架">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2018/06/03/hello-world/index.html">
+<meta property="og:title" content="Spring">
+<meta property="og:url" content="http://yoursite.com/2019/01/20/spring/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta property="og:description" content="轻量级、开源的、简化企业级应用开发的框架">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-05-23T06:34:28.612Z">
+<meta property="og:updated_time" content="2020-05-23T06:03:26.714Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta name="twitter:title" content="Spring">
+<meta name="twitter:description" content="轻量级、开源的、简化企业级应用开发的框架">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,40 +150,106 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-spring" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      Spring
     </h1>
   
 
         
-        <a href="/2018/06/03/hello-world/" class="archive-article-date">
-  	<time datetime="2018-06-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-03</time>
+        <a href="/2019/01/20/spring/" class="archive-article-date">
+  	<time datetime="2019-01-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-20</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+        <p>轻量级、开源的、简化企业级应用开发的框架</p>
 <a id="more"></a>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h2 id="Spring作用："><a href="#Spring作用：" class="headerlink" title="Spring作用："></a>Spring作用：</h2><p>1.降低组件之间的耦合度，实现各层之间的解耦</p>
+<p>2.可以使用容器提供的众多服务：<br>-事务管理服务(Spring 利用AOP，实现了声明式事务管理：@Transactional。加上后当产生异常，会自动回滚</p>
+<p>-AOP(其底层是AspectJ，AspectJ的底层是“反射包中的动态代理”或者CGLIB 动态代理)</p>
+<p>作用：性能测试，在不改变原有业务情况下，为软件灵活扩展横向功能</p>
+<p>3：提供了单例模式支持。开发人员不需要自己编写实现代码 </p>
+<p>4：提供了AOP技术。实现如：权限拦截，运行监控等功能 </p>
+<p>5：提供了众多的辅助类。如JDBC Template，HIbernate Template </p>
+<p>6：对主流的应用框架提供了集成支持。集成Struts，JPA，Hibernate</p>
+<p>IOC:控制反转（Inversion of Control）<br>控制权的转移就是所谓的反转。<br>应用程序本身不负责依赖对象的创建和维护，依赖对象的创建和维护是由外部容器负责的。<br>这样控制权就由应用程序转移到了外部容器。</p>
+<p>DI依赖注入：Dependency Injection：<br>在运行时由外部容器将依赖对象注入到组件中。</p>
+<h2 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h2><p>1-spring：贯穿整个项目，一个容器</p>
+<p>2-依赖包：spring.jar 、common-logging 写日志 ;  配置文件：applicationContext.xml</p>
+<p>3-IOC：inserve of controll 由程序控制对象，改成通过spring容器来控制对象bean</p>
+<p>4-spring开发提倡接口编程，配合DI技术可以层与层之间解耦<br>    使用接口访问bean，用接口接受返回的getBean(‘xxxID’),然后通过更换xml配置文件的不同的bean（pojo中的方法名一样，功能不一样）配置，可以调用不同实现类的重写后的方法，达到解耦</p>
+<p>5-获取bean：<br>    ~从ApplicationContext上下文容器中(通过反射创建对象)<br>    ApplicationContext ac = new ClassPathXmlApplicationContext(“xxx.xml”);<br>    XXX xxx = ac.getBean(“xxxId”);<br>    ps:当我们实例化xml文件时，该文件配置的bean被实例（该bean scope是 singleton 单例）<br>         singleton 单例（只有单例的才会预先加载）<br>         prototype 原型（一个bean对应多个实例） ：每次创建都是新的对象，但是不会预先加载，实例化<br>         session 、global session、request  其他的几个属性，用在web中</p>
+<pre><code>~从Bean工厂容器中获取bean  (移动设备里面用这个，节约内存)
+BeanFctory factory = new XmlBeanFctory(new ClassPathResource(&quot;xxx.xml&quot;));
+factory.getBean(&quot;xxxID&quot;);
+ps:如果使用beanfactory去获取bean，当你只是实例化了该容器，那么容器里面的bean不会被实例化，只有在你去使用某个bean的时候才会，实时实例化bean
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+结论：如果使用applicationcontext，则配置的bean如果实时singlton不管你用不用，都被实例化（好处是可以预先加载，缺点是销号内存）
+         如果使用beanfactory，则当你实例化该对象时候，配置的bean不会被马上实例化，当你是用的时候，才被实例化。（节约内存）（延迟加载）
+         基本是用applicationContext上下文</code></pre><p>6-三种方式获取applicationContext上下文<br>~类路径 ClassPathXmlApplicationContext<br>~文件系统 FileSystemXmlApplicationContext<br>~web系统中加载 XmlWebApplicationContext（当tomcat启动时加载applicationContext）</p>
+<p>7-bean生命周期<br>    ……</p>
+<p>8-装配Bean<br>~xml配置文件装配<br>    尽量是用singleton，使用原型prototype会消耗性能</p>
+<h1 id="springmvc"><a href="#springmvc" class="headerlink" title="springmvc"></a>springmvc</h1><p>用来简化基于MVC架构的WEB应用程序开发的框架。表示层的框架</p>
+<p><strong>DispatcherServlet         前端控制器<br>HandlerMapping             处理器映射器<br>HandlerAdapter            处理器适配器<br>ModelAndView<br>viewResolver                视图解析器</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;url-pattern&gt;/&lt;/url-pattern&gt;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<pre><code>不会匹配到*.jsp，即：*.jsp不会进入spring的dispatcherServlet</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;url-pattern&gt;<span class="comment">/*&lt;/url-pattern&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<pre><code>会匹配到*.jsp,会出现返回jsp视图时再次进入spring的dispatcherservlet类，重复的去分配到方法里面，最终导致找不到对应的controller所以报错404
+意思：匹配到xxx.jsp,然后拦截后，处理，变成xxx.jsp.jsp，继续拦截，重复拦截，最后报错404</code></pre><p>SpringMVC<br>~MVC框架<br>~springmvc驱动包 jar<br>web.xml 作为容器入口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;servlet&gt;</span><br><span class="line">	&lt;servlet-name&gt;springMVC&lt;/servlet-name&gt;</span><br><span class="line">	&lt;servlet-<span class="class"><span class="keyword">class</span>&gt;<span class="title">org</span>.<span class="title">springframework</span>.<span class="title">web</span>.<span class="title">servlet</span>.<span class="title">DispatcherServlet</span>&lt;/<span class="title">servlet</span>-<span class="title">class</span>&gt;</span></span><br><span class="line"><span class="class">	&lt;<span class="title">load</span>-<span class="title">on</span>-<span class="title">startup</span>&gt;1&lt;/<span class="title">load</span>-<span class="title">on</span>-<span class="title">startup</span>&gt;</span></span><br><span class="line"><span class="class">&lt;/<span class="title">servlet</span>&gt;</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">&lt;<span class="title">servlet</span>-<span class="title">mapping</span>&gt;</span></span><br><span class="line"><span class="class">	&lt;<span class="title">servlet</span>-<span class="title">name</span>&gt;<span class="title">springMVC</span>&lt;/<span class="title">servlet</span>-<span class="title">name</span>&gt;</span></span><br><span class="line"><span class="class">	&lt;<span class="title">url</span>-<span class="title">pattern</span>&gt;/&lt;/<span class="title">url</span>-<span class="title">pattern</span>&gt;</span></span><br><span class="line"><span class="class">&lt;/<span class="title">servlet</span>-<span class="title">mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>spring-servlet.xml<br>    前提：web项目 ；配置文件默认位置：WEB-INFO<br>配置视图解析器等，参考网上的配合文件，如果是整合了spring，那么这个配置文件内容是空的，但是必须要保留下来</p>
+<h2 id="jsp页面数据到SpringMVC中的contrller处理"><a href="#jsp页面数据到SpringMVC中的contrller处理" class="headerlink" title="jsp页面数据到SpringMVC中的contrller处理"></a>jsp页面数据到SpringMVC中的contrller处理</h2><p>~直接读取表单数据</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String userName = req.getParameter(<span class="string">"xxxxName"</span>);</span><br><span class="line">String userPwd = req.getParameter(<span class="string">"xxxxUserPwd"</span>);</span><br></pre></td></tr></table></figure>
+
+<p>~SpringMVC的参数映射问题（jsp页面或者url路径的参数同控制器里的方法的参数对应）</p>
+<p>~~与表单元素的name名字和控制器中方法的形参名一样</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">"text"</span> value=<span class="string">" "</span> name=<span class="string">"typeName"</span>&gt;</span><br><span class="line"><span class="meta">@RequestMapping</span>(value=<span class="string">"/addtype.action"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addType</span><span class="params">(String typeName)</span></span>&#123;</span><br><span class="line">  syso();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>~~使用普通的pojo（java对象）传值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">"text"</span> value=<span class="string">" "</span> name=<span class="string">"typeName"</span>&gt;</span><br><span class="line">&lt;input type=<span class="string">"text"</span> value=<span class="string">" "</span> name=<span class="string">"xx"</span>&gt;</span><br><span class="line">&lt;input type=<span class="string">"text"</span> value=<span class="string">" "</span> name=<span class="string">"xxx"</span>&gt;</span><br><span class="line">&lt;input type=<span class="string">"text"</span> value=<span class="string">" "</span> name=<span class="string">"xxxx"</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(value=<span class="string">"/addtype.action"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addType</span><span class="params">(UserInfo u)</span></span>&#123;</span><br><span class="line">  syso(u.getUserName());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>~~通过url参数传递（自动映射url对应的参数到Action上面的数值）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">GetContent</span><span class="params">(@RequestParam(<span class="string">"key"</span>)</span>String key)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>~~后台页面跳转通过返回string类型值实现</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> <span class="string">"/xxx.jsp"</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="SpringMVC返回ModelAndView对象"><a href="#SpringMVC返回ModelAndView对象" class="headerlink" title="SpringMVC返回ModelAndView对象"></a>SpringMVC返回ModelAndView对象</h2><p>~控制器类中，处理客户端请求后，可以把需要响应到页面的数据和视图名字封装到一个ModelAndView对象中，然后直接返回这个对象。<br>导包：org.springframework.web.setvlet.ModelAndView<br>EX:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ModelAndView mav = <span class="keyword">new</span> ModelAndView();</span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">true</span>)&#123;</span><br><span class="line">users.setRealname(<span class="string">"xx"</span>);</span><br><span class="line">mav.addObject(<span class="string">"users"</span>,users);</span><br><span class="line">mav.setViewName(<span class="string">"show"</span>);  <span class="comment">//页面</span></span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">mav.addObject(<span class="string">"msg"</span>,<span class="string">"xxxxxxxxxx"</span>);</span><br><span class="line">mav.setViewName(<span class="string">"login"</span>);  <span class="comment">//页面</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="SSM框架返回数据json"><a href="#SSM框架返回数据json" class="headerlink" title="SSM框架返回数据json"></a>SSM框架返回数据json</h2><p><del>使用json<br>~</del>导包<br><del>使用注解@ResponseBody，通过HttpMessageConverter接口转换为指定格式的数据，如：json、xml，通过response响应给用户<br>~</del>使用注解@RequestBody，接受http请求的json字符串，并将其转换为java对象</p>
+<p>demo<br>前台页面</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xxx_json = &#123;</span><br><span class="line"> <span class="string">"user_name"</span>: user_name,</span><br><span class="line"> <span class="string">"user_mail"</span>: user_mail</span><br><span class="line">&#125;   <span class="comment">//js对象</span></span><br></pre></td></tr></table></figure>
+
+<p>var jason_str = JSON.stringify(user_josn);//js对象转为JSON字符串</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">url:<span class="string">""</span>,</span><br><span class="line">cache:<span class="literal">true</span>,</span><br><span class="line">type:<span class="string">"post"</span>,</span><br><span class="line">datatype:<span class="string">"json"</span>,</span><br><span class="line">contentType:<span class="string">"appplication/json;charset=utf-8"</span>,</span><br><span class="line">data :jason_str,</span><br><span class="line">success:<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">   ........</span><br><span class="line">&#125;</span><br><span class="line">&#125;);   <span class="comment">//ajax发送数据给后台</span></span><br></pre></td></tr></table></figure>
+
+<p>后台代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ResquestMapping</span>(value = <span class="string">"/xxx"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@ResponseBody</span> <span class="function">User <span class="title">checkUserLogin</span><span class="params">(@RequestBody User user)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(user.getUser_name() != <span class="keyword">null</span>)&#123;</span><br><span class="line">		user = userService.findByName(user.getUser_name());</span><br><span class="line">	&#125;<span class="keyword">else</span> <span class="keyword">if</span>()&#123;</span><br><span class="line">		user = userService.findByMail(user.getUser_mail());</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> user;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="AOP原理："><a href="#AOP原理：" class="headerlink" title="AOP原理："></a>AOP原理：</h2><p>1.动态代理机制<br>~使用JDK创建动态代理<br>    JdkDynamicAopProxy<br>~使用CGlib创建动态代理<br>    Cglib2AopProxy</p>
+<p>2.字节码bytecode instrument（插桩）</p>
+<p>面向切面编程<br>aspect oriented programming<br>~是对所有对象或者一类对象编程<br>~事务、日志、安全、异常等交叉功能的处理<br>~核心：在不增加代码的基础上，还增加新功能<br>~实际上开发框架本身用的多，但是实际项目中，用的不多。</p>
+<p>扩展：<br>  汇编语言（伪机器指令 mov jump）面向机器<br>  c 语言（面向过程）（系统级别，底层开发：操作系统、防火墙、数据库、驱动等）<br>  java语言（面向对象）</p>
+<p>前置通知：方法前执行<br>后置通知：方法后执行<br>环绕通知：Around，在执行方法前或者后面执行<br>异常通知：Throws，当抛出异常时通知<br>引入通知：通过配置bean.xml，可以去掉代理对象中的某个方法是否启用前置通知等</p>
+<p>具体步骤：<br>1.定义接口<br>2.编写接口实现类（被代理对象，目标对象）<br>3.编写通知（前置通知：在目标方法前调用；就是交叉功能封装的一个公用类，实现前置接口）<br>4.在bean.xml文件中配置<br><del>配置被代理对象<br>~配置前置通知before（通知，相当于切面的实现）<br>~配置代理对象（ProxyFactoryBean的对象实例）<br>  ~</del>配置代理接口<br>  <del>配置织入通知<br>  ~</del>配置被代理对象</p>
+<p><strong>提问：springAOP中，通过代理对象去实现aop的时候，获取的ProxyFactoryBean是什么类型？</strong><br>    返回的是一个代理对象，如果目标对象实现接口，则使用jdk动态代理技术<br>                     如果目标对象没有实现接口，则使用CGlib的动态代理技术<br>基于工厂模式</p>
+<h2 id="springIOC"><a href="#springIOC" class="headerlink" title="springIOC"></a>springIOC</h2><p>Bean定义：<br>    @Component、@Repository、@Service、@Controller<br>    ps：@Component这个是泛化概念，可以用在各个层次。<br>自动注入：<br>    @Autowired、@Resource、@Qalifier</p>
+<p>@Autowired<br>~注释进行自动注入<br>按照bytype进行注入，如果发现找到多个bean，则，又按照byName方式比对，如果还有多个，则报出异常<br>    @Autowired<br>    private ExamUserMapper examUserMapper;<br>~手动指定<br>按照byName方式注入，使用@Qualifier<br>    @Autowired() @Qualifier(‘xxxDAO’)</p>
+<p>@Resource<br>~作用相当于@Autowired，但是this默认是按照byName方式自动注入。<br>~有两个属性，name和type，spring将name属性解析为bean的名字，而type属性则解析为bean的类型。<br>    若指定name，则是按照byName方式注入<br>    若指定type，则是按照byType方式注入<br>    都没指定，默认byName方式注入</p>
 
       
 
@@ -268,7 +334,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/06/03/hello-world/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/01/20/spring/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -282,15 +348,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/07/02/网络基础/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/02/14/maven/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          网络编程基础一
+          Maven
         
       </div>
     </a>
   
+  
+    <a href="/2018/07/07/JVM/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">This is JVM</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
