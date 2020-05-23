@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>Quartz(定时任务) | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/page/3/index.html">
+  <meta name="description" content="一句话看懂quartz 123451、创建调度工厂();   　　 //工厂模式2、根据工厂取得调度器实例();  　　//工厂模式3、Builder模式构建子组件&amp;lt;Job,Trigger&amp;gt; 　　 // builder模式, 如JobBuilder、TriggerBuilder、DateBuilder4、通过调度器组装子组件   调度器.组装&amp;lt;子组件1,子组件2...&amp;gt;">
+<meta name="keywords" content="框架">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Quartz(定时任务)">
+<meta property="og:url" content="http://yoursite.com/2019/04/19/Quartz(定时任务)/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一句话看懂quartz 123451、创建调度工厂();   　　 //工厂模式2、根据工厂取得调度器实例();  　　//工厂模式3、Builder模式构建子组件&amp;lt;Job,Trigger&amp;gt; 　　 // builder模式, 如JobBuilder、TriggerBuilder、DateBuilder4、通过调度器组装子组件   调度器.组装&amp;lt;子组件1,子组件2...&amp;gt;">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-05-23T12:36:28.211Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Quartz(定时任务)">
+<meta name="twitter:description" content="一句话看懂quartz 123451、创建调度工厂();   　　 //工厂模式2、根据工厂取得调度器实例();  　　//工厂模式3、Builder模式构建子组件&amp;lt;Job,Trigger&amp;gt; 　　 // builder模式, 如JobBuilder、TriggerBuilder、DateBuilder4、通过调度器组装子组件   调度器.组装&amp;lt;子组件1,子组件2...&amp;gt;">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -140,258 +145,194 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Quartz(定时任务)" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Quartz(定时任务)
+    </h1>
+  
+
+        
+        <a href="/2019/04/19/Quartz(定时任务)/" class="archive-article-date">
+  	<time datetime="2019-04-18T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-19</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一句话看懂quartz</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、创建调度工厂();   　　 <span class="comment">//工厂模式</span></span><br><span class="line"><span class="number">2</span>、根据工厂取得调度器实例();  　　<span class="comment">//工厂模式</span></span><br><span class="line"><span class="number">3</span>、Builder模式构建子组件&lt;Job,Trigger&gt; 　　 <span class="comment">// builder模式, 如JobBuilder、TriggerBuilder、DateBuilder</span></span><br><span class="line"><span class="number">4</span>、通过调度器组装子组件   调度器.组装&lt;子组件<span class="number">1</span>,子组件<span class="number">2</span>...&gt;  　　<span class="comment">//工厂模式</span></span><br><span class="line"><span class="number">5</span>、调度器.start();　　 <span class="comment">//工厂模式</span></span><br></pre></td></tr></table></figure>
+
+<p>Quartz的3个重要组成:<br><strong>JobDetail，Trigger，Scheduler</strong></p>
+<a id="more"></a>
+<p><strong>依赖jar</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- https:<span class="comment">//mvnrepository.com/artifact/org.quartz-scheduler/quartz --&gt;</span></span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.quartz-scheduler&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;quartz&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;2.3.0&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>每隔2秒钟打印一次HelloQuartz</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.quartz.Job;</span><br><span class="line"><span class="keyword">import</span> org.quartz.JobExecutionContext;</span><br><span class="line"><span class="keyword">import</span> org.quartz.JobExecutionException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.text.SimpleDateFormat;</span><br><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloJob</span> <span class="keyword">implements</span> <span class="title">Job</span></span>&#123;</span><br><span class="line">　　<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">execute</span><span class="params">(JobExecutionContext jobExecutionContext)</span> <span class="keyword">throws</span> JobExecutionException </span>&#123;</span><br><span class="line">        <span class="comment">//打印当前的执行时间 例如 2017-11-23 00:00:00</span></span><br><span class="line">        Date date = <span class="keyword">new</span> Date();</span><br><span class="line">        SimpleDateFormat sf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>);</span><br><span class="line">        System.out.println(<span class="string">"现在的时间是："</span>+ sf.format(date));</span><br><span class="line">        <span class="comment">//具体的业务逻辑</span></span><br><span class="line">        System.out.println(<span class="string">"Hello Quartz"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloScheduler</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> SchedulerException </span>&#123;</span><br><span class="line">        <span class="comment">//创建一个jobDetail的实例，将该实例与HelloJob Class绑定</span></span><br><span class="line">        JobDetail jobDetail = JobBuilder.newJob(HelloJob.class).withIdentity(<span class="string">"myJob"</span>).build();</span><br><span class="line">        <span class="comment">//创建一个Trigger触发器的实例，定义该job立即执行，并且每2秒执行一次，一直执行</span></span><br><span class="line">        SimpleTrigger trigger = TriggerBuilder.newTrigger().withIdentity(<span class="string">"myTrigger"</span>).startNow().withSchedule(SimpleScheduleBuilder.simpleSchedule().withIntervalInSeconds(<span class="number">2</span>).repeatForever()).build();</span><br><span class="line">        <span class="comment">//创建schedule实例</span></span><br><span class="line">        StdSchedulerFactory factory = <span class="keyword">new</span> StdSchedulerFactory();</span><br><span class="line">        Scheduler scheduler = factory.getScheduler();</span><br><span class="line">        scheduler.start();</span><br><span class="line">        scheduler.scheduleJob(jobDetail,trigger);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="cron表达式编写规则"><a href="#cron表达式编写规则" class="headerlink" title="cron表达式编写规则"></a>cron表达式编写规则</h2><p>　<strong><em>1.　Quartz Cron 表达式支持7个域 ,分别是秒/分/时/日/月/周/年.期中年是非必须项.如下图</em></strong></p>
+<p>名称    是否必须    允许值    特殊字符<br>秒    是    0-59    , - * /<br>分    是    0-59    , - * /<br>时    是    0-23    , - * /<br>日    是    1-31    , - * ? / L W C<br>月    是    1-12 或 JAN-DEC    , - * /<br>周    是    1-7 或 SUN-SAT    , - * ? / L C #<br>年    否    空 或 1970-2099    , - * /</p>
+<p><strong><em>官方的一些案例</em></strong></p>
+<p>表示式    说明<br>0 0 12 * * ?    每天12点运行<br>0 15 10 ? * *    每天10:15运行<br>0 15 10 * * ?    每天10:15运行<br>0 15 10 * * ? *    每天10:15运行<br>0 15 10 * * ? 2008    在2008年的每天10：15运行<br>0 * 14 * * ?    每天14点到15点之间每分钟运行一次，开始于14:00，结束于14:59。<br>0 0/5 14 * * ?    每天14点到15点每5分钟运行一次，开始于14:00，结束于14:55。<br>0 0/5 14,18 * * ?    每天14点到15点每5分钟运行一次，此外每天18点到19点每5钟也运行一次。<br>0 0-5 14 * * ?    每天14:00点到14:05，每分钟运行一次。<br>0 10,44 14 ? 3 WED    3月每周三的14:10分到14:44，每分钟运行一次。<br>0 15 10 ? * MON-FRI    每周一，二，三，四，五的10:15分运行。<br>0 15 10 15 * ?    每月15日10:15分运行。<br>0 15 10 L * ?    每月最后一天10:15分运行。<br>0 15 10 ? * 6L    每月最后一个星期五10:15分运行。<br>0 15 10 ? * 6L 2007-2009    在2007,2008,2009年每个月的最后一个星期五的10:15分运行。<br>0 15 10 ? * 6#3    每月第三个星期五的10:15分运行。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>老板大气<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/3qEveryone.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/13/oracle 函数/" class="archive-article-date">
-  	<time datetime="2018-08-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/13/oracle 函数/">oracle函数</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">框架</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/19/Quartz(定时任务)/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/09/存储过程/" class="archive-article-date">
-  	<time datetime="2018-08-08T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-09</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2019/04/23/SFTP/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          SFTP
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/03/26/RSA简介/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">加密算法（RSA简介）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/09/存储过程/">存储过程</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/08/Nosql/" class="archive-article-date">
-  	<time datetime="2018-08-07T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/08/Nosql/">Nosql</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/07/JVM/" class="archive-article-date">
-  	<time datetime="2018-07-06T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/07/JVM/">This is JVM</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/03/java网络编程一书见解/" class="archive-article-date">
-  	<time datetime="2018-07-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/03/java网络编程一书见解/">网络编程基础二</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/02/网络基础/" class="archive-article-date">
-  	<time datetime="2018-07-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/02/网络基础/">网络编程基础一</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/03/hello-world/" class="archive-article-date">
-  	<time datetime="2018-06-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/03/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/2/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span>
-    </nav>
   
 
 
@@ -415,8 +356,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
