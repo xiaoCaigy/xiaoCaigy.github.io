@@ -6,15 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>This is JVM | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="理解虚拟机">
+<meta property="og:type" content="article">
+<meta property="og:title" content="This is JVM">
+<meta property="og:url" content="http://yoursite.com/2018/07/07/JVM/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="理解虚拟机">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200523115744227.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2d1b3l1X2M=,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2020-05-23T04:12:16.821Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="This is JVM">
+<meta name="twitter:description" content="理解虚拟机">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200523115744227.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2d1b3l1X2M=,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -146,16 +152,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-JVM" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-JVM" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/07/JVM/">This is JVM</a>
+    <h1 class="article-title" itemprop="name">
+      This is JVM
     </h1>
   
 
@@ -169,11 +173,65 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>理解虚拟机</p>
-        
-          <a class="article-more-a" href="/2018/07/07/JVM/#more">more >></a>
-        
+<a id="more"></a>
+
+<p>1.内存<br>2.类加载<br>3.GC</p>
+<p><img src="https://img-blog.csdnimg.cn/20200523115744227.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2d1b3l1X2M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="1-机器内存"><a href="#1-机器内存" class="headerlink" title="1.机器内存"></a>1.机器内存</h2><p>堆 Heap（对象实例和数组）</p>
+<p>栈 
+本地方法栈 Native Method Area<br>虚拟机栈 VM Stack</p>
+<p>方法区 Method Area （运行时常量池）</p>
+<p>程序计数器 Program Counter</p>
+<p>直接内存 Direct Memory</p>
+<h3 id="程序计数器"><a href="#程序计数器" class="headerlink" title="程序计数器"></a>程序计数器</h3><p>  线程私有，即每个线程都会有一个，线程之间互不影响，独立存储。<br>  代表着当前线程所执行字节码的行号指示器。</p>
+<p>  因为多线程中，当线程数超过CPU数量或CPU内核数量，线程之间就要根据时间片轮询抢夺CPU时间资源。因此每个线程有自己一个独立的程序计数器，<br>来记录下一条要运行的指令。如果执行的是java方法，计数器记录正在执行的java字节码地址；若是native方法，则计数器为空。</p>
+<h3 id="虚拟机栈"><a href="#虚拟机栈" class="headerlink" title="虚拟机栈"></a>虚拟机栈</h3><p>  线程私有，生命周期与线程相同。描述的是java方法执行的内存模型<br>  每个方法在执行的同时都会创建一个栈帧用于存储局部变量、操作数栈、动态链表、方法出口等信息。</p>
+<p>  每一个方法从调用直到完成的过程，就对应着一个栈帧在虚拟机中入栈到出栈的过程。</p>
+<p>  局部变量表存放了编译器可知道各种基本数据类型和对象引用，所需内存空间在编译期确定。</p>
+<p>  -Xoss参数设置本地方法栈大小<br>  -Xss参数设置栈容量：例如 -Xss128k</p>
+<p>  请求的栈深度大于最大可用深度，则抛出stackOverflowError<br>  如果栈是可动态扩展的，但没有内存空间支持扩展，则抛出OutofMemoryError</p>
+<p>本地方法栈<br>  同虚拟机栈，只不过本地方法栈位虚拟机使用到的native方法服务</p>
+<h3 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h3><p>  线程共享  主要用于分配对象实例和数组  垃圾回收主要区域</p>
+<p>  分为新生代和老年代<br>  新生代：存放刚创建的对象以及年轻的对象<br>    eden：<br>    s0：<br>    s1：<br>  老年代：对象一直没有被回收，生存的足够长，就会移入老年代</p>
+<p>  -Xms 参数设置最小值<br>  -Xmx 参数设置最大值</p>
+<h3 id="方法区（运行时常量池）"><a href="#方法区（运行时常量池）" class="headerlink" title="方法区（运行时常量池）"></a>方法区（运行时常量池）</h3><p>  线程共享  用于存储已被虚拟机加载的类信息、常量、静态变量、即使编译后的代码等数据。</p>
+<p>  别名（永久代）</p>
+<p>  -XX:MaxPermSize设置上限<br>  -XX:PermSize设置最小值</p>
+<p>  运行时常量池是方法区的一部分：用于存放编译器生成的各种字面量和符号引用，这部分内容将在类加载后进入方法区的运行时常量池中存放。</p>
+<h3 id="直接内存"><a href="#直接内存" class="headerlink" title="直接内存"></a>直接内存</h3><p>  对于32位操作系统来说，系统最大内存为4G<br>  系统给每个进程的内存是有限的，32位windows限制为2G</p>
+<p>###对象存活判定算法<br>1.引用计数算法<br>2.可达性分析算法：<br>  GC Roots对象包括：<br>    虚拟机栈中引用的对象<br>    方法区类静态属性引用的对象<br>    方法区中常量引用的对象<br>    本地方法栈中JNI引用的对象</p>
+<p>垃圾收集算法<br>1.标记-清除法<br>2.复制算法<br>3.标记-整理算法<br>4.分代收集算法</p>
+<p>回收方法区<br>  废弃常量和无用的类</p>
+<p>  该类所有的实例都已经被回收，即java堆中不存在该类的任何实例<br>  加载该类的ClassLoader已经被回收<br>  该类对应的java.lang.Class对象没有在任何地方被引用</p>
+<h2 id="2-类加载"><a href="#2-类加载" class="headerlink" title="2.类加载"></a>2.类加载</h2><h2 id="3-GC"><a href="#3-GC" class="headerlink" title="3.GC"></a>3.GC</h2>
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>老板大气<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/3qEveryone.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -182,16 +240,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/07/JVM/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/07/JVM/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2018/06/03/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -211,73 +328,14 @@
 
 
 
-
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/03/hello-world/">Hello World</a>
-    </h1>
   
 
-        
-        <a href="/2018/06/03/hello-world/" class="archive-article-date">
-  	<time datetime="2018-06-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-        
-          <a class="article-more-a" href="/2018/06/03/hello-world/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/03/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
+  
 
   
+
   
 
 
@@ -300,8 +358,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
