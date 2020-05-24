@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>springboot实战-笔记整理（二） | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
+  <meta name="description" content="第一章,入门:Spring概述虽然Spring的组件代码是轻量级的，但它的配置却是重量级的。一开始，Spring用XML配置， 而且是很多XML配置。Spring 2.5引入了基于注解的组件扫描，Spring 3.0引入了基于Java的配置，这是一种类型安全的可重构配置方式， 可以代替XML:">
+<meta name="keywords" content="springboot">
+<meta property="og:type" content="article">
+<meta property="og:title" content="springboot实战-笔记整理（二）">
+<meta property="og:url" content="http://yoursite.com/2020/05/02/springboot实战-笔记整理（二）/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="第一章,入门:Spring概述虽然Spring的组件代码是轻量级的，但它的配置却是重量级的。一开始，Spring用XML配置， 而且是很多XML配置。Spring 2.5引入了基于注解的组件扫描，Spring 3.0引入了基于Java的配置，这是一种类型安全的可重构配置方式， 可以代替XML:">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200225173121566.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Nhbmhld3V5YW5n,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2020-05-24T15:27:41.335Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="springboot实战-笔记整理（二）">
+<meta name="twitter:description" content="第一章,入门:Spring概述虽然Spring的组件代码是轻量级的，但它的配置却是重量级的。一开始，Spring用XML配置， 而且是很多XML配置。Spring 2.5引入了基于注解的组件扫描，Spring 3.0引入了基于Java的配置，这是一种类型安全的可重构配置方式， 可以代替XML:">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200225173121566.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Nhbmhld3V5YW5n,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -140,398 +147,213 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-springboot实战-笔记整理（二）" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      springboot实战-笔记整理（二）
+    </h1>
+  
+
+        
+        <a href="/2020/05/02/springboot实战-笔记整理（二）/" class="archive-article-date">
+  	<time datetime="2020-05-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-02</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="第一章-入门"><a href="#第一章-入门" class="headerlink" title="第一章,入门:"></a>第一章,入门:</h2><p><strong>Spring概述</strong><br>虽然Spring的组件代码是轻量级的，但它的配置却是重量级的。一开始，Spring用XML配置， 而且是很多XML配置。Spring 2.5引入了基于注解的组件扫描，Spring 3.0引入了基于Java的配置，这是一种类型安全的可重构配置方式， 可以代替XML:</p>
+<a id="more"></a>
+<p>Spring 1.x 时代,第一阶段:xml配置,</p>
+<p>Spring 2.x时代,注解配置.</p>
+<p>Spring 3.x时代 Java配置,</p>
+<p>Spring框架是一个轻量级的企业级开发的一站式解决方案,即基于Spring解决Java EE开发的所有问题,Spring框架主要提供了IoC容器,AOP,数据访问,Web开发,消息测试等相关的技术的支持.</p>
+<p>Spring使用简单的POJO来进行企业级开发,被Spring管理的对象都被称为Bean,使用Spring提供的Ioc容器来初始化对象,解决对象的依赖管理和对象的使用.</p>
+<p><strong>Spring Boot精要 :</strong></p>
+<p><em>自动配置：</em><br>针对很多Spring应用程序常见的应用功能，Spring Boot能自动提供相关配置,比如DataSource的配置,。</p>
+<p><em>起步依赖：</em><br>告诉Spring Boot需要什么功能，引入需要的库。基于父子工程的基础,Springboot定义好了版本号. 不必担心版本依赖的问题.</p>
+<p> <em>命令行界面：</em><br> 这是Spring Boot的可选特性，借此你只需写代码就能完成完整的应用程序， 无需传统项目构建。Spring Boot CLI利用了起步依赖和自动配置，CLI能检测到你使用了哪些类，它知道要向Classpath中添加哪些起步依赖才 能让它运转起来。一旦那些依赖出现在Classpath中，一系列自动配置就会接踵而来，确保启用 DispatcherServlet和Spring MVC，这样控制器就能响应HTTP请求了。 </p>
+<p><em>Actuator：</em><br>让你能够深入运行中的Spring Boot应用程序，一探究竟。 </p>
+<p>Spring Boot不是什么 :<br>Spring Boot可以把Web应用程 序变为可自执行的JAR文件，不用部署到传统Java应用服务器里就能在命令行里运行。Spring Boot 在应用程序里嵌入了一个Servlet容器（Tomcat、Jetty或Undertow）</p>
+<p>Spring Boot也没有实现诸如JPA或JMS（Java Message Service，Java消息服务）之 类的企业级Java规范。它的确支持不少企业级Java规范，但是要在Spring里自动配置支持那些特 性的Bean。例如，Spring Boot没有实现JPA，不过它自动配置了某个JPA实现（比如Hibernate）的 Bean，以此支持JPA.</p>
+<p>安装Spring Boot CLI :</p>
+<p>使用Spring Initializr初始化 Spring Boot项目 :Spring Initializr从本质上来说就是一个Web应用程序，它能为你生成Spring Boot项目结构。虽 然不能生成应用程序代码，但它能为你提供一个基本的项目结构，以及一个用于构建代码的 Maven或Gradle构建说明文件。你只需要写应用程序的代码就好了.</p>
+<h2 id="第二章-开发一个SpringBoot应用"><a href="#第二章-开发一个SpringBoot应用" class="headerlink" title="第二章,开发一个SpringBoot应用"></a>第二章,开发一个SpringBoot应用</h2><p>@SpringBootApplication将三个有用的注解组合在了一起。</p>
+<p>Spring的@Configuration：标明该类使用Spring基于Java的配置。</p>
+<p> Spring的@ComponentScan：启用组件扫描，这样你写的Web控制器类和其他组件才能被 自动发现并注册为Spring应用程序上下文里的Bean。</p>
+<p> Spring Boot的@EnableAutoConfiguration：这个不起眼的小注解也可以称为 @Abracadabra，就是这一行配置开启了Spring Boot自动配置</p>
+<p><strong>使用起步依赖</strong><br>指定基于功能的依赖<br>Spring Boot通过提供众多起步依赖降低项目依赖的复杂度。起步依赖本质上是一个Maven项目对象模型（Project Object Model，POM），定义了对其他库的传递依赖，这些东西加在一起即 支持某项功能。很多起步依赖的命名都暗示了它们提供的某种或某类功能。 </p>
+<p><strong>覆盖起步依赖引入的传递依赖</strong><br>比如你在使用Springboot中Web起步依赖,他会传递依赖Jackson JSON库,但是你做的是一个前后端不分离的项目,可能不用JSON,把他排除掉,可以为项目瘦身.</p>
+<p>在maven里使用:可以用<exclusions>元素来排除传递依赖。<dependency>增加了<exclusions>元素去除Jackson：</exclusions></dependency></exclusions></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;  </span><br><span class="line"> &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; </span><br><span class="line">  &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt; </span><br><span class="line">      &lt;exclusions&gt; </span><br><span class="line">       &lt;exclusion&gt;</span><br><span class="line">       &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;</span><br><span class="line">      &lt;/exclusion&gt;</span><br><span class="line">     &lt;/exclusions&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<p>可以显示选择合适的版本</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">   &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;</span><br><span class="line">   &lt;artifactId&gt;jackson-databind&lt;/artifactId&gt;</span><br><span class="line">   &lt;version&gt;2.4.3&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>使用自动配置 :</strong><br>专注于应用程序功能 :<br>我们构建一个简单的应用之后,，有个名为spring-boot-autoconfigure的JAR文件，其中包含了 很多配置类。每个配置类都在应用程序的Classpath里，都有机会为应用程序的配置添砖加瓦</p>
+<p>利用了Spring的条件化配置，这是Spring 4.0引入 的新特性。条件化配置允许配置存在于应用程序中，但在满足某些特定条件之前都忽略这个配置。在Spring里可以很方便地编写你自己的条件，你所要做的就是实现Condition接口，覆盖它 的matches()方法。举例来说，下面这个简单的条件类只有在Classpath里存在JdbcTemplate时 才会生效</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> readinglist; </span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Condition; </span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.ConditionContext; </span><br><span class="line"><span class="keyword">import</span> org.springframework.core.type.AnnotatedTypeMetadata; </span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JdbcTemplateCondition</span> <span class="keyword">implements</span> <span class="title">Condition</span> </span>&#123;  </span><br><span class="line"> <span class="meta">@Override</span>   </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">matches</span><span class="params">(ConditionContext context,AnnotatedTypeMetadata metadata)</span></span></span><br><span class="line"><span class="function"> </span>&#123;  </span><br><span class="line">     <span class="keyword">try</span> &#123;    </span><br><span class="line">       context.getClassLoader().loadClass( <span class="string">"org.springframework.jdbc.core.JdbcTemplate"</span>);</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125; </span><br><span class="line">&#125; </span><br><span class="line"><span class="comment">//当你用Java来声明Bean的时候，可以使用这个自定义条件类： </span></span><br><span class="line"><span class="meta">@Conditional</span>(JdbcTemplateCondition.class) <span class="function"><span class="keyword">public</span> MyService <span class="title">myService</span><span class="params">()</span> </span>&#123;     ... &#125;</span><br></pre></td></tr></table></figure>
+
+<p>只有当JdbcTemplateCondition类的条件成立时才会创建MyService这个 Bean。也就是说MyService Bean创建的条件是Classpath里有JdbcTemplate.</p>
+<p><img src="https://img-blog.csdnimg.cn/20200225173121566.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Nhbmhld3V5YW5n,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>DataSourceAutoConfiguration中的配置:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"> <span class="meta">@ConditionalOnClass</span>(&#123; DataSource.class, EmbeddedDatabaseType.class &#125;) </span><br><span class="line"><span class="meta">@EnableConfigurationProperties</span>(DataSourceProperties.class)</span><br><span class="line"> <span class="meta">@Import</span>(&#123; Registrar.class, DataSourcePoolMetadataProvidersConfiguration.class &#125;) </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DataSourceAutoConfiguration</span> </span>&#123; </span><br><span class="line"> </span><br><span class="line">... </span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>DataSourceAutoConfiguration上添加了@ConditionalOnClass注解，要求Classpath里必须要有DataSource和 EmbeddedDatabaseType。如果它们不存在，条件就不成立，DataSourceAutoConfiguration 提供的配置都会被忽略掉。 DataSourceAutoConfiguration里嵌入了一个JdbcTemplateConfiguration类，自动 配置了一个JdbcTemplate Bean： </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span> </span><br><span class="line"><span class="meta">@Conditional</span>(DataSourceAutoConfiguration.DataSourceAvailableCondition.class) </span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">JdbcTemplateConfiguration</span> </span>&#123; </span><br><span class="line"> </span><br><span class="line">  <span class="meta">@Autowired</span>(required = <span class="keyword">false</span>)</span><br><span class="line">   <span class="keyword">private</span> DataSource dataSource; </span><br><span class="line"> </span><br><span class="line">  <span class="meta">@Bean</span></span><br><span class="line">   <span class="meta">@ConditionalOnMissingBean</span>(JdbcOperations.class)</span><br><span class="line">   <span class="function"><span class="keyword">public</span> JdbcTemplate <span class="title">jdbcTemplate</span><span class="params">()</span> </span>&#123;     <span class="keyword">return</span> <span class="keyword">new</span> JdbcTemplate(<span class="keyword">this</span>.dataSource);   &#125; </span><br><span class="line"> </span><br><span class="line">... </span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这个方法上还加了@ConditionalOnMissingBean注解，因此只有在不存在JdbcOperations（即JdbcTemplate实现的接口）类型的Bean时，才会创建JdbcTemplate Bean。 </p>
+<p><strong>自动配置,配置决策:</strong><br>因为Classpath里有Spring MVC（归功于Web 起步依赖），所以会配置Spring的 DispatcherServlet并启用Spring MVC。</p>
+<p>因为这是一个Spring MVC Web应用程序，所以会注册一个资源处理器，把相对于Classpath 根目录的/static目录里的静态内容提供出来。（这个资源处理器还能处理/public、/resources 和/META-INF/resources的静态内容。）</p>
+<p>因为Classpath里有Tomcat（通过Web起步依赖传递引用），所以会启动一个嵌入式的Tomcat 容器，监听8080端口</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>老板大气<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/3qEveryone.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/08/HashMap/" class="archive-article-date">
-  	<time datetime="2019-09-07T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/08/HashMap/">HashMap</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">springboot</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/05/02/springboot实战-笔记整理（二）/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/02/JMS/" class="archive-article-date">
-  	<time datetime="2019-07-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-02</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/05/01/springboot实战-笔记整理（一）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">springboot实战-笔记整理（一）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/02/JMS/">JMS</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">JMS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/17/Nginx/" class="archive-article-date">
-  	<time datetime="2019-06-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/17/Nginx/">Nginx</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Nginx</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/13/Node.js/" class="archive-article-date">
-  	<time datetime="2019-05-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/13/Node.js/">Node.js</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Node</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/23/SFTP/" class="archive-article-date">
-  	<time datetime="2019-04-22T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/23/SFTP/">SFTP</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">服务器</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/19/Quartz(定时任务)/" class="archive-article-date">
-  	<time datetime="2019-04-18T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/19/Quartz(定时任务)/">Quartz(定时任务)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">框架</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/26/RSA简介/" class="archive-article-date">
-  	<time datetime="2019-03-25T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/26/RSA简介/">加密算法（RSA简介）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">加密</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/22/加密算法/" class="archive-article-date">
-  	<time datetime="2019-03-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/22/加密算法/">加密算法(一)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">加密</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/02/linux/" class="archive-article-date">
-  	<time datetime="2019-03-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/02/linux/">linux</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">操作系统</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/14/maven/" class="archive-article-date">
-  	<time datetime="2019-02-13T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/14/maven/">Maven</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><a class="extend next" rel="next" href="/archives/page/3/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -555,8 +377,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
