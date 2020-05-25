@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: js | Hexo</title>
+  <title>springboot实战-笔记整理（三） | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/tags/js/index.html">
+  <meta name="description" content="第三章,自定义配置覆盖Spring Boot自动配置 :应用程序添加Spring Security: 1234&amp;lt;dependency&amp;gt;   &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;   &amp;lt;artifactId&amp;gt;spring-boot-starter-security&amp;lt;/artifactId&amp;gt;">
+<meta name="keywords" content="springboot">
+<meta property="og:type" content="article">
+<meta property="og:title" content="springboot实战-笔记整理（三）">
+<meta property="og:url" content="http://yoursite.com/2020/05/03/springboot实战-笔记整理（三）/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="第三章,自定义配置覆盖Spring Boot自动配置 :应用程序添加Spring Security: 1234&amp;lt;dependency&amp;gt;   &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;   &amp;lt;artifactId&amp;gt;spring-boot-starter-security&amp;lt;/artifactId&amp;gt;">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-05-25T05:05:04.802Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="springboot实战-笔记整理（三）">
+<meta name="twitter:description" content="第三章,自定义配置覆盖Spring Boot自动配置 :应用程序添加Spring Security: 1234&amp;lt;dependency&amp;gt;   &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;   &amp;lt;artifactId&amp;gt;spring-boot-starter-security&amp;lt;/artifactId&amp;gt;">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -140,106 +145,258 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-springboot实战-笔记整理（三）" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/05/echart (2)/" class="archive-article-date">
-  	<time datetime="2018-10-04T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-05</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/05/echart (2)/">echart (2)</a>
+    <h1 class="article-title" itemprop="name">
+      springboot实战-笔记整理（三）
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/05/03/springboot实战-笔记整理（三）/" class="archive-article-date">
+  	<time datetime="2020-05-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="第三章-自定义配置"><a href="#第三章-自定义配置" class="headerlink" title="第三章,自定义配置"></a>第三章,自定义配置</h2><p>覆盖Spring Boot自动配置 :<br>应用程序添加Spring Security:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">   &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">   &lt;artifactId&gt;spring-boot-starter-security&lt;/artifactId&gt;</span><br><span class="line"> &lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+<p>创建自定义的安全配置 </p>
+<p>在Spring Security的场景下，这意味着写 一个扩展了WebSecurityConfigurerAdapter的配置类,重写该类的configure,和方法.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.liruilong.hros.config;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.databind.ObjectMapper;</span><br><span class="line"><span class="keyword">import</span> com.liruilong.hros.filter.VerifyCodeFilter;</span><br><span class="line"><span class="keyword">import</span> com.liruilong.hros.model.Hr;</span><br><span class="line"><span class="keyword">import</span> com.liruilong.hros.model.RespBean;</span><br><span class="line"><span class="keyword">import</span> com.liruilong.hros.service.HrService;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.authentication.*;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.config.annotation.ObjectPostProcessor;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.config.annotation.web.builders.HttpSecurity;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.config.annotation.web.builders.WebSecurity;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.core.Authentication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.core.AuthenticationException;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.crypto.password.PasswordEncoder;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.web.AuthenticationEntryPoint;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.web.access.intercept.FilterSecurityInterceptor;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.web.authentication.AuthenticationSuccessHandler;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.web.authentication.logout.LogoutSuccessHandler;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.PrintWriter;</span><br><span class="line"> </span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span> :</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span>: Liruilong</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: 2019/12/18 19:11</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"> </span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SecurityConfig</span> <span class="keyword">extends</span> <span class="title">WebSecurityConfigurerAdapter</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    HrService hrService;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    CustomFilterInvocationSecurityMetadataSource customFilterInvocationSecurityMetadataSource;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    CustomUrlDecisionManager customUrlDecisionManager;</span><br><span class="line">     <span class="meta">@Autowired</span></span><br><span class="line">    VerifyCodeFilter verifyCodeFilter ;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    MyAuthenticationFailureHandler myAuthenticationFailureHandler;</span><br><span class="line"> </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">configure</span><span class="params">(HttpSecurity http)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        http.addFilterBefore(verifyCodeFilter, UsernamePasswordAuthenticationFilter.class)</span><br><span class="line">                .authorizeRequests()</span><br><span class="line">                <span class="comment">//.anyRequest().authenticated()</span></span><br><span class="line">                <span class="comment">//所有请求的都会经过这进行鉴权处理。返回当前请求需要的角色。</span></span><br><span class="line">                .withObjectPostProcessor(<span class="keyword">new</span> ObjectPostProcessor&lt;FilterSecurityInterceptor&gt;() &#123;</span><br><span class="line">                    <span class="meta">@Override</span></span><br><span class="line">                    <span class="keyword">public</span> &lt;O extends FilterSecurityInterceptor&gt; <span class="function">O <span class="title">postProcess</span><span class="params">(O object)</span> </span>&#123;</span><br><span class="line">                        object.setSecurityMetadataSource(customFilterInvocationSecurityMetadataSource);</span><br><span class="line">                        object.setAccessDecisionManager(customUrlDecisionManager);</span><br><span class="line">                        <span class="keyword">return</span> object;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;)</span><br><span class="line">                .and().formLogin().usernameParameter(<span class="string">"username"</span>).passwordParameter(<span class="string">"password"</span>)</span><br><span class="line">                <span class="comment">//设置登录请求的url路径</span></span><br><span class="line">                .loginProcessingUrl(<span class="string">"/doLogin"</span>)</span><br><span class="line">                <span class="comment">/*需要身份验证时，将浏览器重定向到/ login</span></span><br><span class="line"><span class="comment">                我们负责在请求/ login时呈现登录页面</span></span><br><span class="line"><span class="comment">                当身份验证尝试失败时，将浏览器重定向到/ login？error（因为我们没有另外指定）</span></span><br><span class="line"><span class="comment">                当请求/ login？error时，我们负责呈现失败页面</span></span><br><span class="line"><span class="comment">                成功注销后，将浏览器重定向到/ login？logout（因为我们没有另外指定）</span></span><br><span class="line"><span class="comment">                我们负责在请求/ login？logout时呈现注销确认页面*/</span></span><br><span class="line">                .loginPage(<span class="string">"/login"</span>)</span><br><span class="line">                <span class="comment">//登录成功回调</span></span><br><span class="line">                .successHandler(<span class="keyword">new</span> AuthenticationSuccessHandler() &#123;</span><br><span class="line">                    <span class="meta">@Override</span></span><br><span class="line">                    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAuthenticationSuccess</span><span class="params">(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Authentication authentication)</span> <span class="keyword">throws</span> IOException, ServletException </span>&#123;</span><br><span class="line">                        httpServletResponse.setContentType(<span class="string">"application/json;charset=utf-8"</span>);</span><br><span class="line">                        PrintWriter out = httpServletResponse.getWriter();</span><br><span class="line">                        Hr hr = (Hr) authentication.getPrincipal();</span><br><span class="line">                        <span class="comment">//密码不回传</span></span><br><span class="line">                        hr.setPassword(<span class="keyword">null</span>);</span><br><span class="line">                        RespBean ok = RespBean.ok(<span class="string">"登录成功！"</span>, hr);</span><br><span class="line">                        <span class="comment">//将hr转化为Sting</span></span><br><span class="line">                        String s = <span class="keyword">new</span> ObjectMapper().writeValueAsString(ok);</span><br><span class="line">                        out.write(s);</span><br><span class="line">                        out.flush();</span><br><span class="line">                        out.close();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;)</span><br><span class="line">                <span class="comment">//登失败回调</span></span><br><span class="line">                .failureHandler(myAuthenticationFailureHandler)</span><br><span class="line">                <span class="comment">//相关的接口直接返回</span></span><br><span class="line">                .permitAll().and().logout()</span><br><span class="line">                <span class="comment">//注销登录</span></span><br><span class="line">                .logoutSuccessHandler(<span class="keyword">new</span> LogoutSuccessHandler() &#123;</span><br><span class="line">                    <span class="meta">@Override</span></span><br><span class="line">                    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onLogoutSuccess</span><span class="params">(HttpServletRequest httpServletRequest,</span></span></span><br><span class="line"><span class="function"><span class="params">                                                HttpServletResponse httpServletResponse,</span></span></span><br><span class="line"><span class="function"><span class="params">                                                Authentication authentication)</span> <span class="keyword">throws</span> IOException, ServletException </span>&#123;</span><br><span class="line">                        httpServletResponse.setContentType(<span class="string">"application/json;charset=utf-8"</span>);</span><br><span class="line">                        PrintWriter out = httpServletResponse.getWriter();</span><br><span class="line">                        out.write(<span class="keyword">new</span> ObjectMapper().writeValueAsString(RespBean.ok(<span class="string">"注销成功!"</span>)));</span><br><span class="line">                        out.flush();</span><br><span class="line">                        out.close();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;)</span><br><span class="line">                .permitAll().and().csrf().disable().exceptionHandling()</span><br><span class="line">                <span class="comment">//没有认证时，在这里处理结果，不要重定向</span></span><br><span class="line">                .authenticationEntryPoint(</span><br><span class="line">                        <span class="comment">//myAuthenticationEntryPoint;</span></span><br><span class="line">                        <span class="keyword">new</span> AuthenticationEntryPoint() &#123;</span><br><span class="line">                    <span class="meta">@Override</span></span><br><span class="line">                    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">commence</span><span class="params">(HttpServletRequest req, HttpServletResponse resp, AuthenticationException authException)</span> <span class="keyword">throws</span> IOException, ServletException </span>&#123;</span><br><span class="line">                        resp.setContentType(<span class="string">"application/json;charset=utf-8"</span>);</span><br><span class="line">                        resp.setStatus(<span class="number">401</span>);</span><br><span class="line">                        PrintWriter out = resp.getWriter();</span><br><span class="line">                        RespBean respBean = RespBean.error(<span class="string">"访问失败!"</span>);</span><br><span class="line">                        <span class="keyword">if</span> (authException <span class="keyword">instanceof</span> InsufficientAuthenticationException) &#123;</span><br><span class="line">                            respBean.setMsg(<span class="string">"请求失败，请联系管理员!"</span>);</span><br><span class="line">                        &#125;</span><br><span class="line">                        out.write(<span class="keyword">new</span> ObjectMapper().writeValueAsString(respBean));</span><br><span class="line">                        out.flush();</span><br><span class="line">                        out.close();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function">PasswordEncoder <span class="title">passwordEncoder</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> BCryptPasswordEncoder();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">configure</span><span class="params">(AuthenticationManagerBuilder auth)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        auth.userDetailsService(hrService);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@Author</span> Liruilong</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@Description</span>  放行的请求路径</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@Date</span> 19:25 2020/2/7</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@Param</span> [web]</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> void</span></span><br><span class="line"><span class="comment">     **/</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">configure</span><span class="params">(WebSecurity web)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        web.ignoring().antMatchers(<span class="string">"/auth/code"</span>,<span class="string">"/login"</span>,<span class="string">"/css/**"</span>,<span class="string">"/js/**"</span>, <span class="string">"/index.html"</span>, <span class="string">"/img/**"</span>, <span class="string">"/fonts/**"</span>,<span class="string">"/favicon.ico"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>覆盖Spring Boot的自动配置，你所要做的仅仅是编写一个显式的配置。 Spring Boot会发现你的配置，随后降低自动配置的优先级，以你的配置为准。</p>
+<p>在SecurityConfig里，第一个configure()方法指明， “/”（ReadingListController 的方法映射到了该路径）的请求只有经过身份认证且拥有READER角色的用户才能访问。其他的 所有请求路径向所有用户开放了访问权限。</p>
+<p>第二个 configure()方法设置了一个自定义的UserDetailsService，这个服务可以是任意实现了 UserDetailsService的类，用于查找指定用户名的用户。</p>
+<p>用户需要实现了UserDetails接口以及其中的方法，这样Reader就能代表 Spring Security里的用户了。getAuthorities()方法被覆盖过了，始终会为用户授予READER 权限。isAccountNonExpired()、 isAccountNonLocked()、isCredentialsNonExpired() 和isEnabled()方法都返回true，这样读者账户就不会过期，不会被锁定，也不会被撤销。 </p>
+<p>关于Spring Security，自动配置会考虑几个配置类。在这里讨论每个配置类的细节是不切实 际的，但覆盖Spring Boot自动配置的安全配置时，重要的一个类是SpringBootWebSecurity- Configuration。以下是其中的一个代码片段： </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"> <span class="meta">@EnableConfigurationProperties</span></span><br><span class="line"> <span class="meta">@ConditionalOnClass</span>(&#123; EnableWebSecurity.class &#125;) </span><br><span class="line"><span class="meta">@ConditionalOnMissingBean</span>(WebSecurityConfiguration.class)</span><br><span class="line"><span class="meta">@ConditionalOnWebApplication</span></span><br><span class="line"> <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SpringBootWebSecurityConfiguration</span> </span>&#123; </span><br><span class="line"> </span><br><span class="line">... </span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>SpringBootWebSecurityConfiguration上加了好几个注解。</p>
+<p>@Condi- tionalOnClass注解后，你就应该知道Classpath里必须要有@EnableWebSecurity注解。<br>@ConditionalOnWebApplication 说明这必须是个Web 应用程序。<br>@ConditionalOn- MissingBean注解才是我们的安全配置类代替SpringBootWebSecurityConfiguration的关 键所在。<br>@ConditionalOnMissingBean注解要求当下没有WebSecurityConfiguration类型的 Bean。虽然表面上我们并没有这么一个Bean，但通过在SecurityConfig上添加@EnableWeb- Security注解，我们实际上间接创建了一个WebSecurityConfiguration Bean。所以在自动 配置时，这个Bean就已经存在了，@ConditionalOnMissingBean条件不成立，SpringBoot- WebSecurityConfiguration提供的配置就被跳过了。<br> 通过属性文件外置配置<br>Spring Boot自动配置的Bean提供了300多个用于微调的属性。当你调整设置时，只 要在环境变量、Java系统属性、JNDI（Java Naming and Directory Interface）、命令行参数或者属 性文件里进行指定就好了</p>
+<p>比如你想禁用Banner有以下方法:</p>
+<p>命令行方式:$ java -jar readinglist-0.0.1-SNAPSHOT.jar –spring.main.show-banner=false </p>
+<p>application.properties的文件:spring.main.show-banner=false </p>
+<p>为application.yml的YAML文件:spring:   main:     show-banner: false</p>
+<p>将属性设置为环境变量:$ export spring_main_show_banner=false </p>
+<p>Spring Boot应用程序有多种设置途径。Spring Boot能从多种属性源获得属性，</p>
+<p> (1) 命令行参数</p>
+<p>(2) java:comp/env里的JNDI属性</p>
+<p>(3) JVM系统属性</p>
+<p>(4) 操作系统环境变量 </p>
+<p>(5) 随机生成的带random.*前缀的属性（在设置其他属性时，可以引用它们，比如${random. long}）</p>
+<p>(6) 应用程序以外的application.properties或者appliaction.yml文件</p>
+<p>(7) 打包在应用程序内的application.properties或者appliaction.yml文件</p>
+<p>(8) 通过@PropertySource标注的属性源</p>
+<p>(9) 默认属性 这个列表按照优先级排序，也就是说，任何在高优先级属性源里设置的属性都会覆盖低优先 级的相同属性。例如，命令行参数会覆盖其他属性源里的属性。</p>
+<p>application.properties和application.yml文件能放在以下四个位置。</p>
+<p>(1) 外置，在相对于应用程序运行目录的/config子目录里。</p>
+<p>(2) 外置，在应用程序运行的目录里。</p>
+<p>(3) 内置，在config包内。</p>
+<p>(4) 内置，在Classpath根目录</p>
+<p>自动配置微调 :<br>配置嵌入式服务器 ;<br>第一步就是用JDK的 keytool工具来创建一个密钥存储（keystore）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ keytool -keystore mykeys.jks -genkey -alias tomcat -keyalg RSA </span><br><span class="line">server.port=<span class="number">8443</span></span><br><span class="line">server.ssl.key-password=liruilong</span><br><span class="line">server.ssl.key-store-password=liruilong</span><br><span class="line">server.ssl.key-store=file:<span class="comment">///hros/mykeys.jks</span></span><br></pre></td></tr></table></figure>
+
+<p> 禁用模板缓存 :<br>Thymeleaf模板的变更是不会生效的。这是因为Thymeleaf模板默认缓存。这有助于改善应用程序 的性能，因为模板只需编译一次，但在开发过程中就不能实时看到变更的效果了</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spring.thymeleaf.cache=<span class="keyword">false</span></span><br></pre></td></tr></table></figure>
+
+<p>其他模板:</p>
+<p> spring.freemarker.cache（Freemarker）  spring.groovy.template.cache（Groovy模板）  spring.velocity.cache（Velocity） </p>
+<p> 配置日志 :<br>要设置日志级别，你可以创建以logging.level开头的属性，后面是要日志名称。如果根 日志级别要设置为WARN，但Spring Security的日志要用DEBUG级别，</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">logging.level.com.liruilong.hros.mapper=debug</span><br><span class="line">logging.level.root=WARN</span><br><span class="line">logging.level.org.springframework.security=DEBUG</span><br></pre></td></tr></table></figure>
+
+<p>可以把日志写到指定的文件夹:logging. path和loggin.file属性.</p>
+<p>logging.config属性指定自定义的名字</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">logging.config.classpath=logging-config.xml</span><br></pre></td></tr></table></figure>
+
+<p><strong>配置数据源</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">spring.datasource.type=com.alibaba.druid.pool.DruidDataSource</span><br><span class="line">spring.datasource.username=root</span><br><span class="line">spring.datasource.password=mysql</span><br><span class="line">spring.datasource.url=jdbc:mysql:<span class="comment">//39.97.241.18:3306/vhr?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=Asia/Shanghai</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">server.port=<span class="number">8443</span></span><br><span class="line">server.ssl.key-password=liruilong</span><br><span class="line">server.ssl.key-store-password=liruilong</span><br><span class="line">server.ssl.key-store=file:<span class="comment">///hros/mykeys.jks</span></span><br><span class="line"> #数据源配置</span><br><span class="line">#MySQL配置</span><br><span class="line">spring.datasource.type=com.alibaba.druid.pool.DruidDataSource</span><br><span class="line">spring.datasource.username=root</span><br><span class="line">spring.datasource.password=mysql</span><br><span class="line">spring.datasource.url=jdbc:mysql:<span class="comment">//39.97.241.18:3306/vhr?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=Asia/Shanghai</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">spring.security.user.name=user1</span><br><span class="line">spring.security.user.password=password1</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">#日志处理</span><br><span class="line"># 打印sql语句</span><br><span class="line">logging.level.com.liruilong.hros.mapper=debug</span><br><span class="line">logging.level.root=WARN</span><br><span class="line">logging.level.org.springframework.security=DEBUG</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"># 指定映射文件的位置</span><br><span class="line">mybatis.mapper-locations=classpath:com/liruilong/hros/mapper<span class="comment">/*Mapper.xml</span></span><br><span class="line"><span class="comment"> </span></span><br><span class="line"><span class="comment">spring.servlet.multipart.max-file-size=64000MB</span></span><br><span class="line"><span class="comment">spring.servlet.multipart.max-request-size=-1</span></span><br><span class="line"><span class="comment"> </span></span><br><span class="line"><span class="comment">Redis</span></span><br><span class="line"><span class="comment">Redisspring.redis.host=localhost</span></span><br><span class="line"><span class="comment">spring,redis.database  = 0</span></span><br><span class="line"><span class="comment">spring.redis.port=6379</span></span><br><span class="line"><span class="comment">spring.redis.password=liruilong</span></span><br><span class="line"><span class="comment"> </span></span><br><span class="line"><span class="comment">spring.mail.host=smtp.qq.com</span></span><br><span class="line"><span class="comment">spring.mail.protocol=smtp</span></span><br><span class="line"><span class="comment">spring.mail.default-encoding=UTF-8</span></span><br><span class="line"><span class="comment">spring.mail.password=dfssxgsqfiilcbef</span></span><br><span class="line"><span class="comment">spring.mail.username=1654687517@qq.com</span></span><br><span class="line"><span class="comment">spring.mail.port=465</span></span><br><span class="line"><span class="comment">spring.mail.properties.mail.stmp.socketFactory.class=javax.net.ssl.SSLSocketFactory</span></span><br><span class="line"><span class="comment">spring.mail.properties.mail.smtp.socketFactory.port=465</span></span><br><span class="line"><span class="comment">spring.mail.properties.mail.smtp.socketFactory.fallback=false</span></span><br><span class="line"><span class="comment"> </span></span><br><span class="line"><span class="comment">spring.mail.properties.mail.debug=true</span></span><br><span class="line"><span class="comment"> </span></span><br><span class="line"><span class="comment">spring.rabbitmq.username=guest</span></span><br><span class="line"><span class="comment">spring.rabbitmq.password=guest</span></span><br><span class="line"><span class="comment">spring.rabbitmq.host=39.97.241.18</span></span><br><span class="line"><span class="comment">spring.rabbitmq.port=5672</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>应用程序 Bean的配置外置</strong> </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">amazon.associateId=habuma-<span class="number">20</span></span><br></pre></td></tr></table></figure>
+
+<p>在一个类里收集属性 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> readinglist;  </span><br><span class="line"> </span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.context.properties.                               ConfigurationProperties;</span><br><span class="line"> <span class="keyword">import</span> org.springframework.stereotype.Component; </span><br><span class="line"> </span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="comment">//注入带amazon 前缀的属性 </span></span><br><span class="line"> <span class="meta">@ConfigurationProperties</span>(<span class="string">"amazon"</span>)</span><br><span class="line">  <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AmazonProperties</span> </span>&#123; </span><br><span class="line"> </span><br><span class="line">  <span class="keyword">private</span> String associateId; </span><br><span class="line"> </span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAssociateId</span><span class="params">(String associateId)</span> </span>&#123;      <span class="keyword">this</span>.associateId = associateId;   &#125; </span><br><span class="line"> </span><br><span class="line">  <span class="function"><span class="keyword">public</span> String <span class="title">getAssociateId</span><span class="params">()</span> </span>&#123;     <span class="keyword">return</span> associateId;   &#125; </span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>使用Profile进行配置</strong><br>为不同的部署环境配置不同的属性</p>
+<p>Spring Framework从 Spring 3.1开始支持基于Profile的配置。Profile是一种条件化配置，基于运行时激活的Profile，会 使用或者忽略不同的Bean或配置类</p>
+<p>安全配置是针对生产环境的，而自动配置的安全配置用在开发环境刚刚好,所以我们需要在开发环境下,屏蔽SecurityConfig</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Profile</span>(<span class="string">"production"</span>)</span><br><span class="line"> <span class="meta">@Configuration</span></span><br><span class="line"> <span class="meta">@EnableWebSecurity</span></span><br><span class="line"> <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SecurityConfig</span> <span class="keyword">extends</span> <span class="title">WebSecurityConfigurerAdapter</span> </span>&#123; </span><br><span class="line"> </span><br><span class="line">... </span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spring.profiles.active=production</span><br></pre></td></tr></table></figure>
+
+<p>使用特定于Profile的属性文件<br>如果你正在使用application.properties，可以创建额外的属性文件，遵循application-{profile}. properties这种命名格式，这样就能提供特定于Profile的属性了</p>
+<p>开发环境的配置可以放在名为application-development.properties的文件<br>对于生产环境，application-production.properties会将日志级别设置为WARN或更高级别<br>使用多Profile YAML文件进行配置 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">logging:</span><br><span class="line">   level:</span><br><span class="line">     root: INFO </span><br><span class="line"> </span><br><span class="line">--- </span><br><span class="line"> </span><br><span class="line">spring:</span><br><span class="line">   profiles: development </span><br><span class="line"> </span><br><span class="line">logging:</span><br><span class="line">   level:</span><br><span class="line">     root: DEBUG </span><br><span class="line"> </span><br><span class="line">--- </span><br><span class="line"> </span><br><span class="line">spring:</span><br><span class="line">   profiles: production </span><br><span class="line"> </span><br><span class="line">logging:</span><br><span class="line">   path: /tmp/</span><br><span class="line">   file: BookWorm.log</span><br><span class="line">   level:</span><br><span class="line">     root: WARN</span><br></pre></td></tr></table></figure>
+
+<p>application.yml文件分为三个部分，使用一组三个连字符（—）作为分隔符。</p>
+<p>第二段中定义的属性应用于开发环境，因为spring.profiles设置为 development。<br>第三段的spring.profile设置为production，在production Profile被激活时生效。<br>第一段并未指定spring.profiles，因此这里的属性对全部Profile都生效，或 者对那些未设置该属性的激活Profile生效。</p>
+<p> <strong>定制应用程序错误页面 :</strong><br>Spring Boot默认提供这个“白标”（whitelabel）错误页，这是自动配置的一部分。</p>
+<p>Spring Boot自动配置的默认错误处理器会查找名为error的视图，如果找不到就用默认的白标 错误视图,创建一个自定义视图，让解析出的视图名为 error。</p>
+<p> 取决于错误视图解析时的视图解析器。</p>
+<p> 实现了Spring的View接口的Bean，其 ID为error（由Spring的BeanNameViewResolver 所解析）。<br> 如果配置了Thymeleaf，则有名为error.html的Thymeleaf模板。<br> 如果配置了FreeMarker，则有名为error.ftl的FreeMarker模板。<br> 如果配置了Velocity，则有名为error.vm的Velocity模板。<br> 如果是用JSP视图，则有名为error.jsp的JSP模板。<br>把该文件放在src/main/resources/ templates中，运行时它就在Classpath的根目录里。</p>
+<p>Spring Boot会为错误视图提供如下错误属性。</p>
+<p> timestamp：错误发生的时间。<br> status：HTTP状态码。<br> error：错误原因。<br> exception：异常的类名。<br> message：异常消息（如果这个错误是由异常引起的）。<br> errors：BindingResult异常里的各种错误（如果这个错误是由异常引起的）。<br> trace：异常跟踪信息（如果这个错误是由异常引起的）。<br> path：错误发生时请求的URL路径。<br>Spring Boot消除了Spring应用程序中经常要用到的很多样板式配置。让Spring Boot处理全部配置，你可以仰仗它来配置那些适合你的应用程序的组件。当自动配置无法满足需求时，Spring Boot允许你覆盖并微调它提供的配置。 </p>
+<p>覆盖自动配置其实很简单，就是显式地编写那些没有Spring Boot时你要做的Spring配置。 Spring Boot的自动配置被设计为优先使用应用程序提供的配置，然后才轮到自己的自动配置。 </p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>老板大气<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/3qEveryone.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">springboot</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/05/03/springboot实战-笔记整理（三）/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/05/echart/" class="archive-article-date">
-  	<time datetime="2018-10-04T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-05</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/05/02/springboot实战-笔记整理（二）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">springboot实战-笔记整理（二）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/05/echart/">echart</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -262,9 +419,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
